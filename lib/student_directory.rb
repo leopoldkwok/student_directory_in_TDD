@@ -90,16 +90,16 @@ def student_name
 		get_input("name")
 end
 
-def student_hobby
-		get_input("hobby")
-end
-
 def student_cohort
 		month = get_input("cohort")
 		return 'You entered the wrong month name!' unless month_exists?(month)
 		month
 end
 
+
+def student_hobby
+		get_input("hobby")
+end
 
 def month_exists?(month)
 		Date::MONTHNAMES.include?(month.downcase.capitalize)
@@ -128,8 +128,6 @@ def load_students
 			student_list << create_student(row[0], row[1], row[2])
 		end
 end
-
-
 
 # outputting everything
 

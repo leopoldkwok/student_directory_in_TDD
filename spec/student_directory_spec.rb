@@ -33,8 +33,8 @@ describe 'Student Directory TDD Project' do
 
 		it 'know when user inputs 1' do 
 			expect(self).to receive(:student_name)
-			expect(self).to receive(:student_hobby)
 			expect(self).to receive(:student_cohort)
+			expect(self).to receive(:student_hobby)
 			menu_choice("1")
 		end
 
@@ -88,18 +88,18 @@ describe 'Student Directory TDD Project' do
 				expect(student_name).to eq 'Leopold'
 		end
 
-		it "ask user for hobby" do 
-				hobby = "Table Tennis\n"
-				expect(self).to receive(:puts).with("What's your hobby?")
-				expect(self).to receive(:gets).and_return(hobby)
-				expect(student_hobby).to eq 'Table Tennis'
-		end
-
 		it 'inputs a cohort' do 
 				month = "August\n"
 				expect(self).to receive(:puts).with("What's your cohort?")
 				expect(self).to receive(:gets).and_return(month)
 				expect(student_cohort).to eq "August"
+		end
+
+		it "ask user for hobby" do 
+				hobby = "Table Tennis\n"
+				expect(self).to receive(:puts).with("What's your hobby?")
+				expect(self).to receive(:gets).and_return(hobby)
+				expect(student_hobby).to eq 'Table Tennis'
 		end
 
 		it 'knows that August is a month' do
